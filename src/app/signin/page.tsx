@@ -19,8 +19,8 @@ const SingInPage = () => {
     return redirect("/");
   }
 
-  const handleSignin = async () => {
-    const response = await fetch("http://localhost:5500/signin", {
+  const handleSignin = async () =>{
+    const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "/signin", {
       headers: {
         "Content-Type": "application/json",
       },

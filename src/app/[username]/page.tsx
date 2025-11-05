@@ -22,7 +22,7 @@ const Page = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const router=useRouter()
   useEffect(() => {
-    fetch("http://localhost:5500/posts")
+    fetch(process.env.NEXT_PUBLIC_API_URL + "/posts")
       .then((res) => res.json())
       .then((data) => {
         setPosts(data);
@@ -45,7 +45,7 @@ const Page = () => {
       });
   }, []);
   useEffect(() => {
-  fetch("http://localhost:5500/posts")
+  fetch(process.env.NEXT_PUBLIC_API_URL + "/posts")
     .then((res) => res.json())
     .then((data) => {
       const userPosts = data.filter(
